@@ -1,0 +1,1 @@
+module.exports = (client, auth) => client.login("TOKEN GİR").catch(err => console.log(err.message));
