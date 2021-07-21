@@ -1,0 +1,11 @@
+{
+  "name": "ibidi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ibidi.js",
+  "scripts": {
+    "test": "ibidi.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
