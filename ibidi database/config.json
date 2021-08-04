@@ -1,0 +1,10 @@
+{
+    "MAIN_BOT_TOKEN": "",
+    "PREFIX": "s!",
+    "STATUS": "SCHUTZSTAFFEL",
+    "MONGO_URL": "",
+    "GUILD_ID": "",
+    "DISTRIBUTORS": [""],
+    "SAFE_USERS": [],
+    "BACKUP_TIME": 60
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{seo.title}}</title>
+    
+    <!-- meta tags for SEO and social sharing -->
+    <link rel="canonical" href="{{seo.url}}">
+    <meta name="description" content="{{seo.description}}">
+    <meta property="og:title" content="{{seo.title}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{seo.url}}">
+    <meta property="og:description" content="{{seo.description}}">
+    <meta property="og:image" content="{{seo.image}}">
+    <meta name="twitter:card" content="summary">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- this is a handlebars IF statement, checking for a custom "color" parameter set in server.js -->
+    {{#if color}} 
+    <style>
+      .title {
+        color: {{color}};
+      }
+    </style>
+    {{/if}}    
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- this is the start of content for our page -->
+        <h1 class="title">Hello Node!</h1>
+        
+        <!-- add text indicating that we've changed color OR had an error -->
+        {{#if color}}
+          <p class="color-info">
+            Now available in <b>{{color}}</b>!
+          </p>
+        {{/if}}  
+        {{#if colorError}}
+          <p class="color-info">
+            Hmm. Couldn't find <b>"{{colorError}}"</b>. 
+            <a href="?randomize=go">Try a random color?</a>
+          </p>
+        {{/if}}
+        
+        <div class="color-form">
+          <!-- our default paragraph/message -->
+          {{#unless colorError}}
+            {{#unless color}}
+            <!-- There are fancier ways to do this, but nesting two "#unless" statements sets up a "if these are both missing..." condition -->
+            <p>
+              Learn about communication with a server by talking about color.
+            </p>
+            {{/unless}}
+          {{/unless}}
+          
+          <!-- the "what's your favorite color?" form sends a POST to the server, check server.js to see how it works -->
+          <form class="color-search" method="post">
+              <label for="color">
+                <!-- we use the handlebars "#if" statement so the form can adapt to its situation -->
+                {{#if color}}
+                  Try another color?<br>
+                {{else}}
+                  What's your favorite color?<br>
+                {{/if}}
+                <input id="color" name="color" required="required" type="text">
+              </label>
+
+            <button type="submit">Submit</button>
+          </form>
+          
+          <!-- this randomize link communicates with the server (server.js) using a querystring and GET request instead of a form POST -->
+          Can't decide? <a href="?randomize=go">Use a random color!</a>
+        </div>
+        <div class="illo-container">
+          <img src="https://cdn.glitch.com/c62efef6-1e75-45cf-b248-afeccdda9477%2Fillustration.svg?v=1618196069568" class="illustration" alt="Node logo" />
+        </div>
+        
+      </div>
+    </div>
+    <!-- the footer holds our remix button — you can use it for structure or cut it out ✂ -->
+    <footer class="footer">
+      <div class="links"></div>
+      <a
+        class="btn--remix"
+        target="_top"
+        href="https://glitch.com/edit/#!/remix/glitch-hello-node"
+      >
+        <img
+          src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140"
+          alt=""
+        />
+        Remix on Glitch
+      </a>
+    </footer>
+  </body>
+</html>
