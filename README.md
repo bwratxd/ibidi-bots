@@ -5,3 +5,6 @@ BOTLAR Kimene#1000 SCHUTZSTAFFEL ★#0096 Tarafınca Paylaşılmıştır (Vallah
 
 
 +25 stara guardlar ve data base gelir hadi eyw
+
+
+Vallahi boş bir güncelleme öyle abartmayın ama çok komik bir şey öğrendim botçuyum diye gezinen aptal ibidi arkadaşımız aslında muratvstarkdan alt yapı alıp kendimin diyormuş iğğğğ bunu da öğrenmiş olun da gülün biraz aptal botçu ibidi
